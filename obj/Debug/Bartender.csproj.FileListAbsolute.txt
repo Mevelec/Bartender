@@ -1,0 +1,12 @@
+C:\Users\MEVELEC\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Bartender.csprojAssemblyReference.cache
+C:\Users\MEVELEC\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Bartender.Properties.Resources.resources
+C:\Users\MEVELEC\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Bartender.csproj.GenerateResource.cache
+C:\Users\MEVELEC\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Bartender.csproj.CoreCompileInputs.cache
+C:\Users\MEVELEC\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Bartender.exe.config
+C:\Users\MEVELEC\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Bartender.exe
+C:\Users\MEVELEC\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Bartender.pdb
+C:\Users\MEVELEC\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\LiteDB.dll
+C:\Users\MEVELEC\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Bartender.csproj.CopyComplete
+C:\Users\MEVELEC\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Bartender.exe
+C:\Users\MEVELEC\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Bartender.pdb
+C:\Users\MEVELEC\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Bartender.app.views.Form1.resources
