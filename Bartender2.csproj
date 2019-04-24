@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0E902106-B3B7-4084-B593-3EF838377D58}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Bartender2</RootNamespace>
+    <AssemblyName>Bartender2</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LiteDB, Version=4.1.4.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\source\repos\WindowsFormsApp1\WindowsFormsApp1\vendors\liteDB\LiteDB.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="App\Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App\Models\Cocktails\Cocktail.cs" />
+    <Compile Include="App\Models\Cocktails\CocktailsManager.cs" />
+    <Compile Include="App\Settings\settings.cs" />
+    <Compile Include="App\Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="vendors\liteDB\LiteDB.dll" />
+    <Resource Include="Resources\SAO_Icons_v3.300\1_Menu-1\Config.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\1_Menu-1\Config.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\1_Menu-1\Config_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\1_Menu-1\Config_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\1_Menu-1\Location.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\1_Menu-1\Location.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\1_Menu-1\Location_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\1_Menu-1\Location_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\1_Menu-1\Man.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\1_Menu-1\Man.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\1_Menu-1\Man_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\1_Menu-1\Man_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\1_Menu-1\Men.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\1_Menu-1\Men.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\1_Menu-1\Men_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\1_Menu-1\Men_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\1_Menu-1\Message.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\1_Menu-1\Message.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\1_Menu-1\Message_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\1_Menu-1\Message_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\2_Menu-1_Ringed\Ringed Config.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\2_Menu-1_Ringed\Ringed Config.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\2_Menu-1_Ringed\Ringed Config_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\2_Menu-1_Ringed\Ringed Config_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\2_Menu-1_Ringed\Ringed Location.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\2_Menu-1_Ringed\Ringed Location.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\2_Menu-1_Ringed\Ringed Location_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\2_Menu-1_Ringed\Ringed Location_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\2_Menu-1_Ringed\Ringed Man.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\2_Menu-1_Ringed\Ringed Man.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\2_Menu-1_Ringed\Ringed Man_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\2_Menu-1_Ringed\Ringed Man_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\2_Menu-1_Ringed\Ringed Men.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\2_Menu-1_Ringed\Ringed Men.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\2_Menu-1_Ringed\Ringed Men_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\2_Menu-1_Ringed\Ringed Men_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\2_Menu-1_Ringed\Ringed Message.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\2_Menu-1_Ringed\Ringed Message.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\2_Menu-1_Ringed\Ringed Message_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\2_Menu-1_Ringed\Ringed Message_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Dungeon Map.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Dungeon Map.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Dungeon Map_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Dungeon Map_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Equipment.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Equipment.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Equipment_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Equipment_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Field Map &amp; Position Check.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Field Map &amp; Position Check.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Field Map &amp; Position Check_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Field Map &amp; Position Check_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Friend.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Friend.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Friend_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Friend_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Guild.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Guild.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Guild_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Guild_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Help &amp; Unknown.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Help &amp; Unknown.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Help &amp; Unknown_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Help &amp; Unknown_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Invite.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Invite.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Invite_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Invite_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Items.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Items.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Items_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Items_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Logout.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Logout.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Logout_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Logout_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Option.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Option.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Option_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Option_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Party &amp; Profile.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Party &amp; Profile.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Party &amp; Profile_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Party &amp; Profile_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Player.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Player.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Player_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Player_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Quest &amp; Message Box.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Quest &amp; Message Box.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Quest &amp; Message Box_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Quest &amp; Message Box_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Skills.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Skills.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\3_Menu-2\Skills_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\3_Menu-2\Skills_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\4_Buttons\Calling.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\4_Buttons\Calling.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\4_Buttons\Calling_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\4_Buttons\Calling_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\4_Buttons\Cancel &amp; Dissolve.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\4_Buttons\Cancel &amp; Dissolve.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\4_Buttons\Cancel &amp; Dissolve_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\4_Buttons\Cancel &amp; Dissolve_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\4_Buttons\Details.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\4_Buttons\Details.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\4_Buttons\Details_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\4_Buttons\Details_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\4_Buttons\List.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\4_Buttons\List.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\4_Buttons\List_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\4_Buttons\List_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\4_Buttons\Minus.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\4_Buttons\Minus.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\4_Buttons\Minus_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\4_Buttons\Minus_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\4_Buttons\No.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\4_Buttons\No.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\4_Buttons\No_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\4_Buttons\No_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\4_Buttons\Plus.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\4_Buttons\Plus.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\4_Buttons\Plus_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\4_Buttons\Plus_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\4_Buttons\Start.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\4_Buttons\Start.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\4_Buttons\Start_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\4_Buttons\Start_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\4_Buttons\Yes.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\4_Buttons\Yes.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\4_Buttons\Yes_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\4_Buttons\Yes_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\5_Skills\Battle Healing.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\5_Skills\Battle Healing.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\5_Skills\Battle Healing_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\5_Skills\Battle Healing_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\5_Skills\Blade Throwing.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\5_Skills\Blade Throwing.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\5_Skills\Blade Throwing_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\5_Skills\Blade Throwing_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\5_Skills\Dual Blades.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\5_Skills\Dual Blades.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\5_Skills\Dual Blades_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\5_Skills\Dual Blades_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\5_Skills\One-Handed Straight Sword.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\5_Skills\One-Handed Straight Sword.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\5_Skills\One-Handed Straight Sword_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\5_Skills\One-Handed Straight Sword_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\5_Skills\Parrying.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\5_Skills\Parrying.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\5_Skills\Parrying_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\5_Skills\Parrying_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\5_Skills\Searching.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\5_Skills\Searching.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\5_Skills\Searching_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\5_Skills\Searching_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\5_Skills\Tracking.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\5_Skills\Tracking.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\5_Skills\Tracking_on.png" />
+    <Content Include="Resources\SAO_Icons_v3.300\5_Skills\Tracking_on.svg" />
+    <Resource Include="Resources\SAO_Icons_v3.300\SAO_Icons_v3.300.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
