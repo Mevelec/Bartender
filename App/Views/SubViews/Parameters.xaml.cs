@@ -13,17 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Bartender2
+namespace Bartender2.App.Views.SubViews
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Parameters.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Parameters : UserControl
     {
-        public MainWindow()
+        public Parameters()
         {
             InitializeComponent();
-            this.DataContext = new Bartender2.App.Views.SubViews.Menu();
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.DataContext = new Bartender2.App.Views.SubViews.Menu();
         }
     }
 }
