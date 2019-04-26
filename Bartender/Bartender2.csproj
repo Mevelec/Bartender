@@ -320,9 +320,9 @@
     <Resource Include="Resources\SAO_Icons_v3.300\SAO_Icons_v3.300.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary2\PumpEntities.csproj">
-      <Project>{fa8f8f35-e2db-4f13-82d6-d95de393dded}</Project>
-      <Name>PumpEntities</Name>
+    <ProjectReference Include="..\ClassLibrary1\Pumps.csproj">
+      <Project>{9916e882-3f2d-4858-971a-2f88487301d9}</Project>
+      <Name>Pumps</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
