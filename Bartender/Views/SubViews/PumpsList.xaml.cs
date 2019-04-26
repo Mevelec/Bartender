@@ -13,8 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Bartender2;
+using Pumps;
 
-namespace Bartender2.App.Views.SubViews
+namespace Bartender2.Views.SubViews
 {
 
     /// <summary>
@@ -22,17 +23,17 @@ namespace Bartender2.App.Views.SubViews
     /// </summary>
     public partial class PumpsList : UserControl
     {
-        private PumpEntities.PumpsManager pumpsManager = new PumpEntities.PumpsManager();
+        private Pumps.Logic.IPumpManager pumpsManager = new PumpFacade().GetPumpManager();
 
         public PumpsList()
         {
             this.InitializeComponent();
-            this.pumpsList.ItemsSource = pumpsManager.getPumps();
+            this.pumpsList.ItemsSource = pumpsManager.GetPumps();
         }
 
         private void PumpsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var item = pumpsList.SelectedItem as PumpEntities.Pump;
+            var item = this.pumpsList.SelectedItem as Pumps.Logic.IPump;
 
             if (item != null)
             {
@@ -42,12 +43,13 @@ namespace Bartender2.App.Views.SubViews
 
         private void Pump_Edit(object sender, RoutedEventArgs e)
         {
-            var item = pumpsList.SelectedItem as PumpEntities.Pump;
+            var item = pumpsList.SelectedItem as Pumps.Logic.IPump;
 
             if (item != null)
             {
                 item.name = this.TxtName.Text;
             }
+            this.pumpsList.ItemsSource = pumpsManager.GetPumps();
         }
     }
 }

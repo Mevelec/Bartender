@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Bartender2.App.Views.SubViews
+namespace Bartender2.Views.SubViews
 {
     /// <summary>
     /// Interaction logic for Parameters.xaml
@@ -27,12 +27,12 @@ namespace Bartender2.App.Views.SubViews
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.MainWindow.DataContext = new Bartender2.App.Views.SubViews.Menu();
+            Application.Current.MainWindow.DataContext = new Bartender2.Views.SubViews.Menu();
         }
 
         private void Configure_Pumps(object sender, RoutedEventArgs e)
         {
-            Application.Current.MainWindow.DataContext = new Bartender2.App.Views.SubViews.PumpsList();
+            Application.Current.MainWindow.DataContext = new Bartender2.Views.SubViews.PumpsList();
         }
     }
 }

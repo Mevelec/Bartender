@@ -4,12 +4,12 @@ using System.Text;
 
 namespace Pumps.Managers
 {
-    class PumpManagerFakeDB : Logic.IPumpManager
+    class PumpsManager : Logic.IPumpManager
     {
         private int _id = 1;
-        readonly List<Pump> _pumpsList = new List<Pump>();
+        readonly List<Logic.IPump> _pumpsList = new List<Logic.IPump>();
 
-        public PumpManagerFakeDB()
+        public PumpsManager()
         {
             this.AddPump(new Pump() { name = "pump 1 ", description = ""});
             this.AddPump(new Pump() { name = "pump 2 ", description = "" });
@@ -19,7 +19,7 @@ namespace Pumps.Managers
             this.AddPump(new Pump() { name = "pump 6 ", description = "" });
         }
 
-        public Pump AddPump(Pump pump)
+        public Logic.IPump AddPump(Logic.IPump pump)
         {
             Pump addedPump;
             this._pumpsList.Add(addedPump = new Pump()
@@ -32,9 +32,9 @@ namespace Pumps.Managers
             return addedPump;
         }
 
-        public List<Pump> GetPumps()
+        public List<Logic.IPump> GetPumps()
         {
-            return new List<Pump>(_pumpsList);
+            return new List<Logic.IPump>(_pumpsList);
         }
     }
 }

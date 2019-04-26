@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bartender2"
         xmlns:Properties="clr-namespace:Bartender2.Properties" x:Class="Bartender2.MainWindow"
-        xmlns:views="clr-namespace:Bartender2.App.Views.SubViews"
+        xmlns:views="clr-namespace:Bartender2.Views.SubViews"
         mc:Ignorable="d"
         Title="MainWindow" Background="#FF2A2D32" HorizontalAlignment="Center" VerticalAlignment="Center">
 

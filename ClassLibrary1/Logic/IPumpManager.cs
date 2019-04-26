@@ -4,20 +4,20 @@ using System.Text;
 
 namespace Pumps.Logic
 {
-    interface IPumpManager
+    public interface IPumpManager
     {
         /// <summary>
         /// Gett all pumps
         /// </summary>
         /// <returns></returns>
-        List<Pump> GetPumps();
+        List<Logic.IPump> GetPumps();
 
         /// <summary>
         /// Add a pump using a Pump Object
         /// </summary>
         /// <param name="pump"></param>
         /// <returns></returns>
-        Pump AddPump(Pump pump);
+        Logic.IPump AddPump(Logic.IPump pump);
                
     }
 }

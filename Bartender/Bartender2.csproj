@@ -95,38 +95,36 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="App\Views\MainWindow.xaml">
+    <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="App\Models\Cocktails\Cocktail.cs" />
-    <Compile Include="App\Models\Cocktails\CocktailsManager.cs" />
     <Compile Include="App\Settings\settings.cs" />
-    <Compile Include="App\Views\MainWindow.xaml.cs">
+    <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="App\Views\SubViews\Menu.xaml">
+    <Page Include="Views\SubViews\Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="App\Views\SubViews\Parameters.xaml">
+    <Page Include="Views\SubViews\Parameters.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="App\Views\SubViews\PumpsList.xaml">
+    <Page Include="Views\SubViews\PumpsList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App\Views\SubViews\Menu.xaml.cs">
+    <Compile Include="Views\SubViews\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="App\Views\SubViews\Parameters.xaml.cs">
+    <Compile Include="Views\SubViews\Parameters.xaml.cs">
       <DependentUpon>Parameters.xaml</DependentUpon>
     </Compile>
-    <Compile Include="App\Views\SubViews\PumpsList.xaml.cs">
+    <Compile Include="Views\SubViews\PumpsList.xaml.cs">
       <DependentUpon>PumpsList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />

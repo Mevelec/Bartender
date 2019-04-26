@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bartender2", "Bartender2.csproj", "{0E902106-B3B7-4084-B593-3EF838377D58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pumps", "..\ClassLibrary1\Pumps.csproj", "{9916E882-3F2D-4858-971A-2F88487301D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pumps", "..\ClassLibrary1\Pumps.csproj", "{9916E882-3F2D-4858-971A-2F88487301D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -13,7 +13,7 @@ namespace Bartender2
         static void Main(string[] args)
         {
             Application a = new Application();
-            a.StartupUri = new Uri("./App/Views/MainWindow.xaml", System.UriKind.Relative);
+            a.StartupUri = new Uri("./Views/MainWindow.xaml", System.UriKind.Relative);
             a.Run();
         }
     }
