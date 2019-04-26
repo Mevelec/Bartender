@@ -114,6 +114,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="App\Views\SubViews\PumpsList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App\Views\SubViews\Menu.xaml.cs">
@@ -121,6 +125,9 @@
     </Compile>
     <Compile Include="App\Views\SubViews\Parameters.xaml.cs">
       <DependentUpon>Parameters.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App\Views\SubViews\PumpsList.xaml.cs">
+      <DependentUpon>PumpsList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -312,6 +319,11 @@
     <Content Include="Resources\SAO_Icons_v3.300\5_Skills\Tracking_on.svg" />
     <Resource Include="Resources\SAO_Icons_v3.300\SAO_Icons_v3.300.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary2\PumpEntities.csproj">
+      <Project>{fa8f8f35-e2db-4f13-82d6-d95de393dded}</Project>
+      <Name>PumpEntities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

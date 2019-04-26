@@ -29,5 +29,10 @@ namespace Bartender2.App.Views.SubViews
         {
             Application.Current.MainWindow.DataContext = new Bartender2.App.Views.SubViews.Menu();
         }
+
+        private void Configure_Pumps(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.DataContext = new Bartender2.App.Views.SubViews.PumpsList();
+        }
     }
 }

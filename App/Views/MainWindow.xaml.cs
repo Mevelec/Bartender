@@ -23,7 +23,7 @@ namespace Bartender2
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new Bartender2.App.Views.SubViews.Menu();
+            this.DataContext = new Bartender2.App.Views.SubViews.PumpsList();
         }
     }
 }

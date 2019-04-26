@@ -20,6 +20,10 @@
             <Label HorizontalAlignment="Center" VerticalAlignment="Center" Content="Parameters" Foreground="White" FontSize="36"/>
         </StackPanel>
 
+        <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Edit pumps" Width="150" Height="40" FontSize="18" Background="#33000000" BorderBrush="{x:Null}" Foreground="White" Margin="10" Click="Configure_Pumps"/>
+        </StackPanel>
+
         <StackPanel Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Content="Back" Width="150" Height="25" FontSize="15" Background="#33000000" BorderBrush="{x:Null}" Foreground="White" Margin="10" Click="Back_Click"/>
         </StackPanel>
