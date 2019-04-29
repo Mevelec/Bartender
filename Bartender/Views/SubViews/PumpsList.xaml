@@ -44,13 +44,23 @@
                         <RowDefinition Height="40"/>
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="0" Background="White">
-                        <Label Content="Name :"/>
-                        <TextBox x:Name="TxtName" Margin="20"/>
+                        <Label Content="Name :" Margin="5"/>
+                        <TextBox x:Name="TxtName" Margin="10, 0"/>
+                        <Label Content="description :" Margin="5"/>
+                        <TextBox x:Name="TxtDescription" Margin="10, 0"/>
+                        <Label Content="Pin :" Margin="5"/>
+                        <TextBox x:Name="TxtPin" Margin="10, 0"/>
+                        <Button Content="Test" Margin="50, 20"/>
                     </StackPanel>
-                    <StackPanel Grid.Row="1" Orientation="Horizontal">
-                        <Button x:Name="Delete" Content="Delete" Margin="10 0"/>
-                        <Button x:Name="Edit" Content="Edit" Margin="10 0" Click="Pump_Edit"/>
-                    </StackPanel>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="150"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" x:Name="Delete" Content="Delete" Margin="10 0" Click="Delete_Click" Width="Auto"/>
+                        <Button Grid.Column="2" x:Name="Edit" Content="Update" Margin="10 0" Click="Pump_Edit" Width="Auto" />
+                    </Grid>
                 </Grid>
             </Grid>
         </StackPanel>

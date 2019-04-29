@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>5</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>565</x>
+      <y>455</y>
+      <w>105</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>/Abstract/
+Pump
+--
++ PumpsTypes type = Default
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>565</x>
+      <y>320</y>
+      <w>90</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>lt=.
+IPump
+--
++ str name
++ str description
++ str pin
+
++ bool pump(float qty) 
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>850</x>
+      <y>330</y>
+      <w>115</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>lt=.
+IPumpManager
+--
++ List&lt;IPump&gt; GetPumps()
++ IPump AddPump(IPump pump)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>585</x>
+      <y>585</y>
+      <w>55</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lw=2
+DefaultPump
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>605</x>
+      <y>390</y>
+      <w>15</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>605</x>
+      <y>515</y>
+      <w>15</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>650</x>
+      <y>355</y>
+      <w>210</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>10.0;10.0;400.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>855</x>
+      <y>480</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lw=2
+PumpManager
+--
+
+- _id = 1
+- List&lt;IPump&gt; _pumpList
+
+- void Initialize()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>900</x>
+      <y>400</y>
+      <w>15</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>875</x>
+      <y>200</y>
+      <w>55</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lw=2
+PumpFacade</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>900</x>
+      <y>180</y>
+      <w>95</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+Singleton</panel_attributes>
+    <additional_attributes>60.0;60.0;110.0;60.0;110.0;10.0;10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>890</x>
+      <y>215</y>
+      <w>25</w>
+      <h>125</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>10.0;230.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

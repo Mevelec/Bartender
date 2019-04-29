@@ -17,7 +17,22 @@ namespace Pumps.Logic
         /// </summary>
         /// <param name="pump"></param>
         /// <returns></returns>
-        Logic.IPump AddPump(Logic.IPump pump);
-               
+        Logic.IPump AddPump(PumpsTypes type);
+
+        /// <summary>
+        /// Delete a pump based on int id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        bool DeletePump(int id);
+
+        /// <summary>
+        /// Update a pump using IPump Object
+        /// </summary>
+        /// <param name=""></param>
+        /// <returns></returns>
+        Logic.IPump UpdatePump(Logic.IPump pump);
+
+        
     }
 }

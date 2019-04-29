@@ -99,7 +99,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="App\Settings\settings.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -154,7 +153,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="vendors\liteDB\LiteDB.dll" />
     <Resource Include="Resources\SAO_Icons_v3.300\1_Menu-1\Config.png" />
     <Content Include="Resources\SAO_Icons_v3.300\1_Menu-1\Config.svg" />
     <Resource Include="Resources\SAO_Icons_v3.300\1_Menu-1\Config_on.png" />
@@ -321,6 +319,14 @@
     <ProjectReference Include="..\ClassLibrary1\Pumps.csproj">
       <Project>{9916e882-3f2d-4858-971a-2f88487301d9}</Project>
       <Name>Pumps</Name>
+    </ProjectReference>
+    <ProjectReference Include="Cocktails\Cocktails.csproj">
+      <Project>{4991b8f7-8d58-4281-95b4-911dbcce969f}</Project>
+      <Name>Cocktails</Name>
+    </ProjectReference>
+    <ProjectReference Include="Settings\Settings.csproj">
+      <Project>{ddd10517-28cd-4a25-a342-1b79770fb6d5}</Project>
+      <Name>Settings</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

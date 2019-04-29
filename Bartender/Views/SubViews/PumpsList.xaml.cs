@@ -23,7 +23,7 @@ namespace Bartender2.Views.SubViews
     /// </summary>
     public partial class PumpsList : UserControl
     {
-        private Pumps.Logic.IPumpManager pumpsManager = new PumpFacade().GetPumpManager();
+        private Pumps.Logic.IPumpManager pumpsManager = PumpFacade.Instance.GetPumpManager();
 
         public PumpsList()
         {
@@ -31,6 +31,7 @@ namespace Bartender2.Views.SubViews
             this.pumpsList.ItemsSource = pumpsManager.GetPumps();
         }
 
+        /** EVENTS HANDLERS **/
         private void PumpsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var item = this.pumpsList.SelectedItem as Pumps.Logic.IPump;
@@ -38,6 +39,8 @@ namespace Bartender2.Views.SubViews
             if (item != null)
             {
                 this.TxtName.Text = item.name;
+                this.TxtDescription.Text = item.description;
+                this.TxtPin.Text = item.pin;
             }
         }
 
@@ -48,7 +51,28 @@ namespace Bartender2.Views.SubViews
             if (item != null)
             {
                 item.name = this.TxtName.Text;
+                item.description = this.TxtDescription.Text;
+                item.pin = this.TxtPin.Text;
+
+                pumpsManager.UpdatePump(item);
             }
+            this.RefreshList();
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            var item = pumpsList.SelectedItem as Pumps.Logic.IPump;
+
+            if (item != null)
+            {
+                pumpsManager.DeletePump(item.id);
+            }
+            this.RefreshList();
+        }
+
+        /** UTYLS **/
+        private void RefreshList()
+        {
             this.pumpsList.ItemsSource = pumpsManager.GetPumps();
         }
     }
