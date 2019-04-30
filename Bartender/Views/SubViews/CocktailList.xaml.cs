@@ -13,17 +13,20 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Bartender2
+namespace Bartender2.Views.SubViews
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CocktailList.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CocktailList : UserControl
     {
-        public MainWindow()
+        private Cocktails.Logic.ICocktailManager cocktailManager = Cocktails.CocktailsFacade.Instance.GetCocktailManager(Cocktails.ManagersTypes.LiteDB);
+
+        public CocktailList()
         {
             InitializeComponent();
-            this.DataContext = new Bartender2.Views.SubViews.CocktailList();
+            this.CocktailListPanel.ItemsSource = cocktailManager.GetCocktails();
+
         }
     }
 }
