@@ -1,24 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
+using System.Windows.Forms;
 
-namespace Bartender2
+namespace Bartender
 {
-    class Program
+    static class Program
     {
-
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
         [STAThread]
-        static void Main(string[] args)
+        static void Main()
         {
-            Application a = new Application();
-            a.StartupUri = new Uri("./Views/MainWindow.xaml", System.UriKind.Relative);
-            a.Run();
-
-            Cocktails.Logic.ICocktailManager cocktailManager = Cocktails.CocktailsFacade.Instance.GetCocktailManager(Cocktails.ManagersTypes.LiteDB);
-            List<Cocktails.Logic.ICocktail> cocktailsList = cocktailManager.GetCocktails();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainWindow());
         }
     }
 }

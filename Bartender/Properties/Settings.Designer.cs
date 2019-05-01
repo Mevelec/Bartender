@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Bartender2.Properties
+namespace Bartender.Properties
 {
 
 
