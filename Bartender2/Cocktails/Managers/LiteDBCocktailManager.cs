@@ -18,6 +18,7 @@ namespace Cocktails.Managers
         {
             this.db = new LiteDatabase(dbLink);
             var collection = this.db.GetCollection<ICocktail>(this.cocktailTableName);
+            collection.Delete(x =>x != null);
             collection.Insert(new Cocktails.DefaultCocktail() { name = "cocktail 1", description = "descri 1 " });
             collection.Insert(new Cocktails.DefaultCocktail() { name = "cocktail 2", description = "descri 2 " });
             collection.Insert(new Cocktails.DefaultCocktail() { name = "cocktail 3", description = "descri 3 " });

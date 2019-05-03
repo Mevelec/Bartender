@@ -4,13 +4,6 @@ using System.Text;
 
 namespace Cocktails
 {
-    public enum IngredientsTypes
-    {
-        Liquid  = 0,
-        Alcohol = 1,
-        Powder  = 2,
-    }
-
     public enum ManagersTypes
     {
         LiteDB = 0,
@@ -29,6 +22,17 @@ namespace Cocktails
             {
                 case ManagersTypes.LiteDB:
                     return new Managers.LiteDBCocktailManager(Settings.Settings.LITE_DB_CONNECTION);
+                default:
+                    throw new NotImplementedException();
+            }
+        }
+
+        public Logic.IIngredientsManager GetIngredientManager(ManagersTypes type)
+        {
+            switch (type)
+            {
+                case ManagersTypes.LiteDB:
+                    return new Managers.LiteDBIngredientManager(Settings.Settings.LITE_DB_CONNECTION);
                 default:
                     throw new NotImplementedException();
             }

@@ -18,12 +18,12 @@ namespace Pumps.Managers
 
         protected void Initialize()
         {
-            this._pumpsList.Add(new DefaultPump() { name = "pump 1 ", description = "", id = 1});
-            this._pumpsList.Add(new DefaultPump() { name = "pump 2 ", description = "", id = 2 });
-            this._pumpsList.Add(new DefaultPump() { name = "pump 3 ", description = "", id = 3 });
-            this._pumpsList.Add(new DefaultPump() { name = "pump 4 ", description = "", id = 4 });
-            this._pumpsList.Add(new DefaultPump() { name = "pump 5 ", description = "", id = 5  });
-            this._pumpsList.Add(new DefaultPump() { name = "pump 6 ", description = "", id = 6 });
+            this._pumpsList.Add(new DefaultPump() { name = "pump 1 ", description = "descri 1", pin="000000", id = 1});
+            this._pumpsList.Add(new DefaultPump() { name = "pump 2 ", description = "descri 2", pin = "010010", id = 2 });
+            this._pumpsList.Add(new DefaultPump() { name = "pump 3 ", description = "descri 3", id = 3 });
+            this._pumpsList.Add(new DefaultPump() { name = "pump 4 ", description = "descri 4", id = 4 });
+            this._pumpsList.Add(new DefaultPump() { name = "pump 5 ", description = "descri 5", id = 5  });
+            this._pumpsList.Add(new DefaultPump() { name = "pump 6 ", description = "descri 6", pin = "020000", id = 6 });
         }
 
         public Logic.IPump AddPump(PumpsTypes type)
@@ -68,11 +68,10 @@ namespace Pumps.Managers
             if(updatedPump != null )
             {
                 updatedPump.name = pump.name;
-                updatedPump.description = pump.name;
+                updatedPump.description = pump.description;
                 updatedPump.pin = pump.pin;
                 return pump;
             }
-
             return null;
         }
     }

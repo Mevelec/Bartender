@@ -75,10 +75,6 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LiteDB, Version=4.1.4.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\source\repos\WindowsFormsApp1\WindowsFormsApp1\vendors\liteDB\LiteDB.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -321,20 +317,6 @@
     <Resource Include="Resources\SAO_Icons_v3.300\5_Skills\Tracking_on.png" />
     <Content Include="Resources\SAO_Icons_v3.300\5_Skills\Tracking_on.svg" />
     <Resource Include="Resources\SAO_Icons_v3.300\SAO_Icons_v3.300.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\Pumps.csproj">
-      <Project>{9916e882-3f2d-4858-971a-2f88487301d9}</Project>
-      <Name>Pumps</Name>
-    </ProjectReference>
-    <ProjectReference Include="Cocktails\Cocktails.csproj">
-      <Project>{4991b8f7-8d58-4281-95b4-911dbcce969f}</Project>
-      <Name>Cocktails</Name>
-    </ProjectReference>
-    <ProjectReference Include="Settings\Settings.csproj">
-      <Project>{ddd10517-28cd-4a25-a342-1b79770fb6d5}</Project>
-      <Name>Settings</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

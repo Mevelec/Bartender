@@ -46,11 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Menu.cs">
+    <Compile Include="Forms\IngAlcohol.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <Compile Include="Forms\IngAlcohol.Designer.cs">
+      <DependentUpon>IngAlcohol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IngLiquid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\IngLiquid.Designer.cs">
+      <DependentUpon>IngLiquid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\IngredientsListPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tabs\IngredientsListPage.Designer.cs">
+      <DependentUpon>IngredientsListPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\CocktailsListPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tabs\CocktailsListPage.Designer.cs">
+      <DependentUpon>CocktailsListPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\PumpsListPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tabs\PumpsListPage.Designer.cs">
+      <DependentUpon>PumpsListPage.cs</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
@@ -60,6 +84,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\IngAlcohol.resx">
+      <DependentUpon>IngAlcohol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IngLiquid.resx">
+      <DependentUpon>IngLiquid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabs\IngredientsListPage.resx">
+      <DependentUpon>IngredientsListPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabs\CocktailsListPage.resx">
+      <DependentUpon>CocktailsListPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabs\PumpsListPage.resx">
+      <DependentUpon>PumpsListPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>

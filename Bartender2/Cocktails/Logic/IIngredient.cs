@@ -9,6 +9,7 @@ namespace Cocktails.Logic
         int id { get; set;  }
         string name { get; set; }
         string description {get; set; }
+        IngredientsTypes type { get; set; }
 
         Dictionary<IIngredient, float> composition { get; set;  }
         float nutritionalValue { get; set; }

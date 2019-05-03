@@ -15,7 +15,7 @@ namespace Cocktails.Ingredients
         public Dictionary<IIngredient, float> composition { get; set; }
         public float nutritionalValue { get; set; }
 
-        IngAlcohol()
+        public IngAlcohol()
         {
             this.type = IngredientsTypes.Alcohol;
         }

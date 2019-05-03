@@ -14,7 +14,7 @@ namespace Cocktails.Ingredients
         public float nutritionalValue { get; set; }
         public IngredientsTypes type { get; set; }
 
-        IngLiquid()
+        public IngLiquid()
         {
             this.type = IngredientsTypes.Liquid;
         }

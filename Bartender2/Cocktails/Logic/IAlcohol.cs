@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Cocktails.Logic
 {
-    interface IAlcohol : Logic.ILiquid
+    public interface IAlcohol : Logic.ILiquid
     {
         /// <summary>
         /// alcoholDegree is by % of alcohol in 1L
