@@ -32,19 +32,23 @@
             this.ListBoxCocktails = new System.Windows.Forms.ListBox();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.TabInfos = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.BtnLayout = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.LblName = new System.Windows.Forms.Label();
-            this.LblDescription = new System.Windows.Forms.Label();
-            this.LblVolume = new System.Windows.Forms.Label();
-            this.LblAlcoholDegree = new System.Windows.Forms.Label();
-            this.LblListIngredients = new System.Windows.Forms.Label();
-            this.LblRecipe = new System.Windows.Forms.Label();
             this.TextBoxName = new System.Windows.Forms.TextBox();
+            this.LblDescription = new System.Windows.Forms.Label();
             this.TextBoxDescription = new System.Windows.Forms.TextBox();
+            this.LblVolume = new System.Windows.Forms.Label();
             this.TextBoxVolume = new System.Windows.Forms.TextBox();
+            this.LblAlcoholDegree = new System.Windows.Forms.Label();
             this.TextBoxAlcoholDegree = new System.Windows.Forms.TextBox();
+            this.LblListIngredients = new System.Windows.Forms.Label();
+            this.ListIngredients = new System.Windows.Forms.ListView();
+            this.ColName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ColType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LblRecipe = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.BtnLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.BtnAddIngredient = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.TabControl.SuspendLayout();
             this.TabInfos.SuspendLayout();
@@ -104,6 +108,131 @@
             this.TabInfos.Text = "Infos";
             this.TabInfos.UseVisualStyleBackColor = true;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.LblName);
+            this.flowLayoutPanel1.Controls.Add(this.TextBoxName);
+            this.flowLayoutPanel1.Controls.Add(this.LblDescription);
+            this.flowLayoutPanel1.Controls.Add(this.TextBoxDescription);
+            this.flowLayoutPanel1.Controls.Add(this.LblVolume);
+            this.flowLayoutPanel1.Controls.Add(this.TextBoxVolume);
+            this.flowLayoutPanel1.Controls.Add(this.LblAlcoholDegree);
+            this.flowLayoutPanel1.Controls.Add(this.TextBoxAlcoholDegree);
+            this.flowLayoutPanel1.Controls.Add(this.LblListIngredients);
+            this.flowLayoutPanel1.Controls.Add(this.ListIngredients);
+            this.flowLayoutPanel1.Controls.Add(this.BtnAddIngredient);
+            this.flowLayoutPanel1.Controls.Add(this.LblRecipe);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(436, 594);
+            this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel1.WrapContents = false;
+            // 
+            // LblName
+            // 
+            this.LblName.AutoSize = true;
+            this.LblName.Location = new System.Drawing.Point(3, 0);
+            this.LblName.Name = "LblName";
+            this.LblName.Size = new System.Drawing.Size(35, 13);
+            this.LblName.TabIndex = 0;
+            this.LblName.Text = "Name";
+            // 
+            // TextBoxName
+            // 
+            this.TextBoxName.Location = new System.Drawing.Point(3, 16);
+            this.TextBoxName.Name = "TextBoxName";
+            this.TextBoxName.Size = new System.Drawing.Size(436, 20);
+            this.TextBoxName.TabIndex = 6;
+            // 
+            // LblDescription
+            // 
+            this.LblDescription.AutoSize = true;
+            this.LblDescription.Location = new System.Drawing.Point(3, 39);
+            this.LblDescription.Name = "LblDescription";
+            this.LblDescription.Size = new System.Drawing.Size(60, 13);
+            this.LblDescription.TabIndex = 1;
+            this.LblDescription.Text = "Description";
+            // 
+            // TextBoxDescription
+            // 
+            this.TextBoxDescription.Location = new System.Drawing.Point(3, 55);
+            this.TextBoxDescription.Name = "TextBoxDescription";
+            this.TextBoxDescription.Size = new System.Drawing.Size(436, 20);
+            this.TextBoxDescription.TabIndex = 7;
+            // 
+            // LblVolume
+            // 
+            this.LblVolume.AutoSize = true;
+            this.LblVolume.Location = new System.Drawing.Point(3, 78);
+            this.LblVolume.Name = "LblVolume";
+            this.LblVolume.Size = new System.Drawing.Size(42, 13);
+            this.LblVolume.TabIndex = 2;
+            this.LblVolume.Text = "Volume";
+            // 
+            // TextBoxVolume
+            // 
+            this.TextBoxVolume.Location = new System.Drawing.Point(3, 94);
+            this.TextBoxVolume.Name = "TextBoxVolume";
+            this.TextBoxVolume.Size = new System.Drawing.Size(436, 20);
+            this.TextBoxVolume.TabIndex = 8;
+            // 
+            // LblAlcoholDegree
+            // 
+            this.LblAlcoholDegree.AutoSize = true;
+            this.LblAlcoholDegree.Location = new System.Drawing.Point(3, 117);
+            this.LblAlcoholDegree.Name = "LblAlcoholDegree";
+            this.LblAlcoholDegree.Size = new System.Drawing.Size(80, 13);
+            this.LblAlcoholDegree.TabIndex = 3;
+            this.LblAlcoholDegree.Text = "Alcohol Degree";
+            // 
+            // TextBoxAlcoholDegree
+            // 
+            this.TextBoxAlcoholDegree.Location = new System.Drawing.Point(3, 133);
+            this.TextBoxAlcoholDegree.Name = "TextBoxAlcoholDegree";
+            this.TextBoxAlcoholDegree.Size = new System.Drawing.Size(436, 20);
+            this.TextBoxAlcoholDegree.TabIndex = 9;
+            // 
+            // LblListIngredients
+            // 
+            this.LblListIngredients.AutoSize = true;
+            this.LblListIngredients.Location = new System.Drawing.Point(3, 156);
+            this.LblListIngredients.Name = "LblListIngredients";
+            this.LblListIngredients.Size = new System.Drawing.Size(78, 13);
+            this.LblListIngredients.TabIndex = 4;
+            this.LblListIngredients.Text = "Ingredients List";
+            // 
+            // ListIngredients
+            // 
+            this.ListIngredients.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ColName,
+            this.ColType});
+            this.ListIngredients.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ListIngredients.Location = new System.Drawing.Point(3, 172);
+            this.ListIngredients.Name = "ListIngredients";
+            this.ListIngredients.Size = new System.Drawing.Size(436, 289);
+            this.ListIngredients.TabIndex = 10;
+            this.ListIngredients.UseCompatibleStateImageBehavior = false;
+            // 
+            // ColName
+            // 
+            this.ColName.Text = "Name";
+            // 
+            // ColType
+            // 
+            this.ColType.Text = "Type";
+            // 
+            // LblRecipe
+            // 
+            this.LblRecipe.AutoSize = true;
+            this.LblRecipe.Location = new System.Drawing.Point(3, 493);
+            this.LblRecipe.Name = "LblRecipe";
+            this.LblRecipe.Size = new System.Drawing.Size(41, 13);
+            this.LblRecipe.TabIndex = 5;
+            this.LblRecipe.Text = "Recipe";
+            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -128,108 +257,16 @@
             this.BtnLayout.Size = new System.Drawing.Size(450, 40);
             this.BtnLayout.TabIndex = 2;
             // 
-            // flowLayoutPanel1
+            // BtnAddIngredient
             // 
-            this.flowLayoutPanel1.Controls.Add(this.LblName);
-            this.flowLayoutPanel1.Controls.Add(this.TextBoxName);
-            this.flowLayoutPanel1.Controls.Add(this.LblDescription);
-            this.flowLayoutPanel1.Controls.Add(this.TextBoxDescription);
-            this.flowLayoutPanel1.Controls.Add(this.LblVolume);
-            this.flowLayoutPanel1.Controls.Add(this.TextBoxVolume);
-            this.flowLayoutPanel1.Controls.Add(this.LblAlcoholDegree);
-            this.flowLayoutPanel1.Controls.Add(this.TextBoxAlcoholDegree);
-            this.flowLayoutPanel1.Controls.Add(this.LblListIngredients);
-            this.flowLayoutPanel1.Controls.Add(this.LblRecipe);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(436, 594);
-            this.flowLayoutPanel1.TabIndex = 0;
-            this.flowLayoutPanel1.WrapContents = false;
-            // 
-            // LblName
-            // 
-            this.LblName.AutoSize = true;
-            this.LblName.Location = new System.Drawing.Point(3, 0);
-            this.LblName.Name = "LblName";
-            this.LblName.Size = new System.Drawing.Size(35, 13);
-            this.LblName.TabIndex = 0;
-            this.LblName.Text = "Name";
-            // 
-            // LblDescription
-            // 
-            this.LblDescription.AutoSize = true;
-            this.LblDescription.Location = new System.Drawing.Point(3, 39);
-            this.LblDescription.Name = "LblDescription";
-            this.LblDescription.Size = new System.Drawing.Size(60, 13);
-            this.LblDescription.TabIndex = 1;
-            this.LblDescription.Text = "Description";
-            // 
-            // LblVolume
-            // 
-            this.LblVolume.AutoSize = true;
-            this.LblVolume.Location = new System.Drawing.Point(3, 78);
-            this.LblVolume.Name = "LblVolume";
-            this.LblVolume.Size = new System.Drawing.Size(42, 13);
-            this.LblVolume.TabIndex = 2;
-            this.LblVolume.Text = "Volume";
-            // 
-            // LblAlcoholDegree
-            // 
-            this.LblAlcoholDegree.AutoSize = true;
-            this.LblAlcoholDegree.Location = new System.Drawing.Point(3, 117);
-            this.LblAlcoholDegree.Name = "LblAlcoholDegree";
-            this.LblAlcoholDegree.Size = new System.Drawing.Size(80, 13);
-            this.LblAlcoholDegree.TabIndex = 3;
-            this.LblAlcoholDegree.Text = "Alcohol Degree";
-            // 
-            // LblListIngredients
-            // 
-            this.LblListIngredients.AutoSize = true;
-            this.LblListIngredients.Location = new System.Drawing.Point(3, 156);
-            this.LblListIngredients.Name = "LblListIngredients";
-            this.LblListIngredients.Size = new System.Drawing.Size(78, 13);
-            this.LblListIngredients.TabIndex = 4;
-            this.LblListIngredients.Text = "Ingredients List";
-            // 
-            // LblRecipe
-            // 
-            this.LblRecipe.AutoSize = true;
-            this.LblRecipe.Location = new System.Drawing.Point(3, 169);
-            this.LblRecipe.Name = "LblRecipe";
-            this.LblRecipe.Size = new System.Drawing.Size(41, 13);
-            this.LblRecipe.TabIndex = 5;
-            this.LblRecipe.Text = "Recipe";
-            // 
-            // TextBoxName
-            // 
-            this.TextBoxName.Location = new System.Drawing.Point(3, 16);
-            this.TextBoxName.Name = "TextBoxName";
-            this.TextBoxName.Size = new System.Drawing.Size(436, 20);
-            this.TextBoxName.TabIndex = 6;
-            // 
-            // TextBoxDescription
-            // 
-            this.TextBoxDescription.Location = new System.Drawing.Point(3, 55);
-            this.TextBoxDescription.Name = "TextBoxDescription";
-            this.TextBoxDescription.Size = new System.Drawing.Size(436, 20);
-            this.TextBoxDescription.TabIndex = 7;
-            // 
-            // TextBoxVolume
-            // 
-            this.TextBoxVolume.Location = new System.Drawing.Point(3, 94);
-            this.TextBoxVolume.Name = "TextBoxVolume";
-            this.TextBoxVolume.Size = new System.Drawing.Size(436, 20);
-            this.TextBoxVolume.TabIndex = 8;
-            // 
-            // TextBoxAlcoholDegree
-            // 
-            this.TextBoxAlcoholDegree.Location = new System.Drawing.Point(3, 133);
-            this.TextBoxAlcoholDegree.Name = "TextBoxAlcoholDegree";
-            this.TextBoxAlcoholDegree.Size = new System.Drawing.Size(436, 20);
-            this.TextBoxAlcoholDegree.TabIndex = 9;
+            this.BtnAddIngredient.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnAddIngredient.Location = new System.Drawing.Point(3, 467);
+            this.BtnAddIngredient.Name = "BtnAddIngredient";
+            this.BtnAddIngredient.Size = new System.Drawing.Size(436, 23);
+            this.BtnAddIngredient.TabIndex = 11;
+            this.BtnAddIngredient.Text = "Add";
+            this.BtnAddIngredient.UseVisualStyleBackColor = true;
+            this.BtnAddIngredient.Click += new System.EventHandler(this.BtnAddIngredient_Click);
             // 
             // CocktailsListPage
             // 
@@ -266,5 +303,9 @@
         private System.Windows.Forms.TextBox TextBoxAlcoholDegree;
         private System.Windows.Forms.Label LblListIngredients;
         private System.Windows.Forms.Label LblRecipe;
+        private System.Windows.Forms.ListView ListIngredients;
+        private System.Windows.Forms.ColumnHeader ColName;
+        private System.Windows.Forms.ColumnHeader ColType;
+        private System.Windows.Forms.Button BtnAddIngredient;
     }
 }

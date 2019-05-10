@@ -38,5 +38,11 @@ namespace Bartender.Forms
                 this.TextBoxAlcoholDegree.Text = item.alcoholDegree.ToString();
             }
         }
+
+        private void BtnAddIngredient_Click(object sender, EventArgs e)
+        {
+            Dialogs.SelectIngredient dialogWindow = new Dialogs.SelectIngredient();
+            dialogWindow.Show();
+        }
     }
 }

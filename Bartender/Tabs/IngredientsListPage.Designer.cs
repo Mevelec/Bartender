@@ -32,16 +32,6 @@
             this.ListBoxIngredients = new System.Windows.Forms.ListBox();
             this.TabAddIngredient = new System.Windows.Forms.TabControl();
             this.TabInfos = new System.Windows.Forms.TabPage();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.LblName = new System.Windows.Forms.Label();
-            this.TextBoxName = new System.Windows.Forms.TextBox();
-            this.LblType = new System.Windows.Forms.Label();
-            this.TextBoxType = new System.Windows.Forms.TextBox();
-            this.LblDescription = new System.Windows.Forms.Label();
-            this.TextBoxDescription = new System.Windows.Forms.TextBox();
-            this.LblNutritionalValue = new System.Windows.Forms.Label();
-            this.TextBoxNutritionalValue = new System.Windows.Forms.TextBox();
-            this.LblComposition = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.SelectType = new System.Windows.Forms.ComboBox();
@@ -50,8 +40,6 @@
             this.BtnRefresh = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.TabAddIngredient.SuspendLayout();
-            this.TabInfos.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -100,7 +88,6 @@
             // 
             // TabInfos
             // 
-            this.TabInfos.Controls.Add(this.flowLayoutPanel1);
             this.TabInfos.Location = new System.Drawing.Point(4, 22);
             this.TabInfos.Margin = new System.Windows.Forms.Padding(0);
             this.TabInfos.Name = "TabInfos";
@@ -109,99 +96,6 @@
             this.TabInfos.TabIndex = 0;
             this.TabInfos.Text = "Infos";
             this.TabInfos.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.LblName);
-            this.flowLayoutPanel1.Controls.Add(this.TextBoxName);
-            this.flowLayoutPanel1.Controls.Add(this.LblType);
-            this.flowLayoutPanel1.Controls.Add(this.TextBoxType);
-            this.flowLayoutPanel1.Controls.Add(this.LblDescription);
-            this.flowLayoutPanel1.Controls.Add(this.TextBoxDescription);
-            this.flowLayoutPanel1.Controls.Add(this.LblNutritionalValue);
-            this.flowLayoutPanel1.Controls.Add(this.TextBoxNutritionalValue);
-            this.flowLayoutPanel1.Controls.Add(this.LblComposition);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(436, 594);
-            this.flowLayoutPanel1.TabIndex = 0;
-            this.flowLayoutPanel1.WrapContents = false;
-            // 
-            // LblName
-            // 
-            this.LblName.AutoSize = true;
-            this.LblName.Location = new System.Drawing.Point(3, 0);
-            this.LblName.Name = "LblName";
-            this.LblName.Size = new System.Drawing.Size(35, 13);
-            this.LblName.TabIndex = 0;
-            this.LblName.Text = "Name";
-            // 
-            // TextBoxName
-            // 
-            this.TextBoxName.Location = new System.Drawing.Point(3, 16);
-            this.TextBoxName.Name = "TextBoxName";
-            this.TextBoxName.Size = new System.Drawing.Size(436, 20);
-            this.TextBoxName.TabIndex = 6;
-            // 
-            // LblType
-            // 
-            this.LblType.AutoSize = true;
-            this.LblType.Location = new System.Drawing.Point(3, 39);
-            this.LblType.Name = "LblType";
-            this.LblType.Size = new System.Drawing.Size(31, 13);
-            this.LblType.TabIndex = 2;
-            this.LblType.Text = "Type";
-            // 
-            // TextBoxType
-            // 
-            this.TextBoxType.Location = new System.Drawing.Point(3, 55);
-            this.TextBoxType.Name = "TextBoxType";
-            this.TextBoxType.Size = new System.Drawing.Size(436, 20);
-            this.TextBoxType.TabIndex = 8;
-            // 
-            // LblDescription
-            // 
-            this.LblDescription.AutoSize = true;
-            this.LblDescription.Location = new System.Drawing.Point(3, 78);
-            this.LblDescription.Name = "LblDescription";
-            this.LblDescription.Size = new System.Drawing.Size(60, 13);
-            this.LblDescription.TabIndex = 1;
-            this.LblDescription.Text = "Description";
-            // 
-            // TextBoxDescription
-            // 
-            this.TextBoxDescription.Location = new System.Drawing.Point(3, 94);
-            this.TextBoxDescription.Name = "TextBoxDescription";
-            this.TextBoxDescription.Size = new System.Drawing.Size(436, 20);
-            this.TextBoxDescription.TabIndex = 7;
-            // 
-            // LblNutritionalValue
-            // 
-            this.LblNutritionalValue.AutoSize = true;
-            this.LblNutritionalValue.Location = new System.Drawing.Point(3, 117);
-            this.LblNutritionalValue.Name = "LblNutritionalValue";
-            this.LblNutritionalValue.Size = new System.Drawing.Size(84, 13);
-            this.LblNutritionalValue.TabIndex = 3;
-            this.LblNutritionalValue.Text = "Nutritional Value";
-            // 
-            // TextBoxNutritionalValue
-            // 
-            this.TextBoxNutritionalValue.Location = new System.Drawing.Point(3, 133);
-            this.TextBoxNutritionalValue.Name = "TextBoxNutritionalValue";
-            this.TextBoxNutritionalValue.Size = new System.Drawing.Size(436, 20);
-            this.TextBoxNutritionalValue.TabIndex = 9;
-            // 
-            // LblComposition
-            // 
-            this.LblComposition.AutoSize = true;
-            this.LblComposition.Location = new System.Drawing.Point(3, 156);
-            this.LblComposition.Name = "LblComposition";
-            this.LblComposition.Size = new System.Drawing.Size(64, 13);
-            this.LblComposition.TabIndex = 4;
-            this.LblComposition.Text = "Composition";
             // 
             // tabPage2
             // 
@@ -283,9 +177,6 @@
             this.Size = new System.Drawing.Size(900, 666);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.TabAddIngredient.ResumeLayout(false);
-            this.TabInfos.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -300,16 +191,6 @@
         private System.Windows.Forms.TabPage TabInfos;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TableLayoutPanel BtnLayout;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label LblName;
-        private System.Windows.Forms.Label LblDescription;
-        private System.Windows.Forms.Label LblType;
-        private System.Windows.Forms.Label LblNutritionalValue;
-        private System.Windows.Forms.TextBox TextBoxName;
-        private System.Windows.Forms.TextBox TextBoxDescription;
-        private System.Windows.Forms.TextBox TextBoxType;
-        private System.Windows.Forms.TextBox TextBoxNutritionalValue;
-        private System.Windows.Forms.Label LblComposition;
         private System.Windows.Forms.ComboBox SelectType;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.GroupBox BoxIngredientForm;

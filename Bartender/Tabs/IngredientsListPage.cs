@@ -44,10 +44,25 @@ namespace Bartender.Forms
         {
             Cocktails.Logic.IIngredient item = this.ListBoxIngredients.SelectedItem as Cocktails.Logic.IIngredient;
             if(item != null)
-            { 
-                this.TextBoxName.Text = item.name;
-                this.TextBoxDescription.Text = item.description;
-                this.TextBoxType.Text = item.type.ToString();
+            {
+                this.TabInfos.Controls.Clear();
+                switch (item.type)
+                {
+                    case Cocktails.IngredientsTypes.Alcohol:
+                        var formAlcohol = new Display.IngAlcohol(item as Cocktails.Logic.IAlcohol);
+                        formAlcohol.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.TabInfos.Controls.Add(formAlcohol);
+                        break;
+
+                    case Cocktails.IngredientsTypes.Liquid:
+                        var formLiquid = new Display.IngLiquid(item as Cocktails.Logic.ILiquid);
+                        formLiquid.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.TabInfos.Controls.Add(formLiquid);
+                        break;
+
+                    default:
+                        throw new NotImplementedException();
+                }
             }
         }
 

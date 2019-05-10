@@ -27,6 +27,11 @@ namespace Bartender.Forms
             item.nutritionalValue = float.Parse(this.TextBoxNutritionalValue.Text);
             item.alcoholDegree = float.Parse(this.TexBoxAlcoholDegree.Text);
             ingredientsManager.AddIngredient(item);
+
+            this.TextBoxName.Text = "";
+            this.TextBoxDescription.Text = "";
+            this.TexBoxAlcoholDegree.Text = "";
+            this.TextBoxNutritionalValue.Text = "";
         }
     }
 }
