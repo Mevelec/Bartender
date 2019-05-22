@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD7E68E1-C191-4723-9509-B9604064AE3B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BartenderApp</RootNamespace>
+    <AssemblyName>BartenderApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Display\IngAlcohol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Display\IngAlcohol.Designer.cs">
+      <DependentUpon>IngAlcohol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Display\IngLiquid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Display\IngLiquid.Designer.cs">
+      <DependentUpon>IngLiquid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IngAlcohol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\IngAlcohol.Designer.cs">
+      <DependentUpon>IngAlcohol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IngLiquid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\IngLiquid.Designer.cs">
+      <DependentUpon>IngLiquid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tabs\CocktailsListPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tabs\CocktailsListPage.Designer.cs">
+      <DependentUpon>CocktailsListPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\IngredientsListPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tabs\IngredientsListPage.Designer.cs">
+      <DependentUpon>IngredientsListPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\PumpsListPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tabs\PumpsListPage.Designer.cs">
+      <DependentUpon>PumpsListPage.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Display\IngAlcohol.resx">
+      <DependentUpon>IngAlcohol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Display\IngLiquid.resx">
+      <DependentUpon>IngLiquid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IngAlcohol.resx">
+      <DependentUpon>IngAlcohol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IngLiquid.resx">
+      <DependentUpon>IngLiquid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Tabs\CocktailsListPage.resx">
+      <DependentUpon>CocktailsListPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabs\IngredientsListPage.resx">
+      <DependentUpon>IngredientsListPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabs\PumpsListPage.resx">
+      <DependentUpon>PumpsListPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Cocktails\Cocktails.csproj">
+      <Project>{152ab300-5ceb-4912-8de1-adf194dc22c8}</Project>
+      <Name>Cocktails</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pumps\Pumps.csproj">
+      <Project>{e35a9cb1-8237-4550-9581-26e36e2dce76}</Project>
+      <Name>Pumps</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Settings\Settings.csproj">
+      <Project>{2b6e83d7-0ffe-473b-929e-bcce43b481e2}</Project>
+      <Name>Settings</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
