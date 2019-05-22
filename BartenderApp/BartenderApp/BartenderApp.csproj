@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dialogs\SelectIngredient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SelectIngredient.Designer.cs">
+      <DependentUpon>SelectIngredient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Display\IngAlcohol.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     <Compile Include="Tabs\PumpsListPage.Designer.cs">
       <DependentUpon>PumpsListPage.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Dialogs\SelectIngredient.resx">
+      <DependentUpon>SelectIngredient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Display\IngAlcohol.resx">
       <DependentUpon>IngAlcohol.cs</DependentUpon>
     </EmbeddedResource>
