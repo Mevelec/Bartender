@@ -19,6 +19,10 @@ namespace Cocktails.Managers
             var collection = this.db.GetCollection<IIngredient>(this.ingredientsTableName);
             collection.Delete(x => x != null);
             collection.Insert(new Ingredients.IngLiquid() { name = "cocktail 1", description = "descri 1 " });
+            collection.Insert(new Ingredients.IngLiquid() { name = "cocktail 2", description = "descri 2 " });
+            collection.Insert(new Ingredients.IngLiquid() { name = "cocktail 3", description = "descri 3 " });
+            collection.Insert(new Ingredients.IngLiquid() { name = "cocktail 4", description = "descri 4 " });
+
         }
 
         public IIngredient AddIngredient(IIngredient ingredient)

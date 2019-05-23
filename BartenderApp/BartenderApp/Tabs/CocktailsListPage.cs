@@ -20,6 +20,15 @@ namespace Bartender.Forms
             this.refreshData();
             this.ListBoxCocktails.DisplayMember = "name";
             this.ListBoxCocktails.ValueMember = "id";
+
+            this.ListIngredients.View = View.Details;
+            this.ListIngredients.GridLines = true;
+            this.ListIngredients.FullRowSelect = true;
+            this.ListIngredients.AllowColumnReorder = true;
+            this.ListIngredients.CheckBoxes = true;
+            this.ListIngredients.Columns.Add("Id");
+            this.ListIngredients.Columns.Add("name");
+            this.ListIngredients.Columns.Add("descritpion");
         }
 
         public void refreshData()
@@ -41,8 +50,15 @@ namespace Bartender.Forms
 
         private void BtnAddIngredient_Click(object sender, EventArgs e)
         {
-            Dialogs.SelectIngredient dialogWindow = new Dialogs.SelectIngredient();
-            dialogWindow.Show();
+            using (Dialogs.SelectIngredient dialogWindow = new Dialogs.SelectIngredient())
+            {
+                if (dialogWindow.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    this.ListIngredients.Items.Add(
+                            new ListViewItem(dialogWindow.lastItemChecked.Clone().ToString().Split(','), 0)
+                            );
+                }
+            }
         }
     }
 }
