@@ -12,27 +12,45 @@ namespace Cocktails.Managers
     {
         protected LiteDatabase db;
         private string cocktailTableName = "cocktails";
-        private string ingredientsTableName = "ingredients";
 
         public LiteDBCocktailManager(String dbLink)
         {
             this.db = new LiteDatabase(dbLink);
             var collection = this.db.GetCollection<ICocktail>(this.cocktailTableName);
             collection.Delete(x =>x != null);
-            collection.Insert(new Cocktails.DefaultCocktail() { name = "cocktail 1", description = "descri 1 " });
-            collection.Insert(new Cocktails.DefaultCocktail() { name = "cocktail 2", description = "descri 2 " });
-            collection.Insert(new Cocktails.DefaultCocktail() { name = "cocktail 3", description = "descri 3 " });
-            collection.Insert(new Cocktails.DefaultCocktail() { name = "cocktail 4", description = "descri 4 " });
-            collection.Insert(new Cocktails.DefaultCocktail() { name = "cocktail 5", description = "descri 5 " });
-            collection.Insert(new Cocktails.DefaultCocktail() { name = "cocktail 6", description = "descri 6 " });
-            collection.Insert(new Cocktails.DefaultCocktail() { name = "cocktail 7", description = "descri 7 " });
-            collection.Insert(new Cocktails.DefaultCocktail() { name = "cocktail 8", description = "descri 8 " });
+            AddCocktail(new Cocktails.DefaultCocktail() { name = "cocktail 1", description = "descri 1 " });
+            AddCocktail(new Cocktails.DefaultCocktail() { name = "cocktail 2", description = "descri 2 " });
+            AddCocktail(new Cocktails.DefaultCocktail() { name = "cocktail 3", description = "descri 3 " });
+            AddCocktail(new Cocktails.DefaultCocktail() { name = "cocktail 4", description = "descri 4 " });
+            /*AddCocktail(
+                new Cocktails.DefaultCocktail()
+                {
+                    name = "cocktail 8",
+                    description = "descri 8 ",
+                    ingredients = new Dictionary<IIngredient, float>()
+                    {
+                        {
+                            new Ingredients.IngLiquid(),
+                            10
+                        }
+                    }
+                }
+            );*/
 
         }
 
         public ICocktail AddCocktail(ICocktail cocktail)
         {
-            throw new NotImplementedException();
+            var collection = this.db.GetCollection<ICocktail>(this.cocktailTableName);
+            collection.Insert(new Cocktails.DefaultCocktail()
+                {
+                name = cocktail.name,
+                description = cocktail.description,
+                alcoholDegree = cocktail.alcoholDegree,
+                ingredients = cocktail.ingredients,
+                }
+            );
+            return cocktail;         
         }
 
         public bool DeleteCocktail(int id)
@@ -47,7 +65,16 @@ namespace Cocktails.Managers
 
         public ICocktail UpdateCocktail(ICocktail cocktail)
         {
-            throw new NotImplementedException();
+            var collection = this.db.GetCollection<ICocktail>(this.cocktailTableName);
+
+            var item = collection.FindById(cocktail.id);
+            item.name = cocktail.name;
+            item.description = cocktail.description;
+            item.alcoholDegree = cocktail.alcoholDegree;
+            item.ingredients = cocktail.ingredients;
+
+            collection.Update(item);
+            return cocktail;
         }
     }
 }

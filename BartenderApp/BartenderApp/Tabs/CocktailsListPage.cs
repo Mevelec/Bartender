@@ -13,14 +13,12 @@ namespace Bartender.Forms
     public partial class CocktailsListPage : UserControl
     {
         private Cocktails.Logic.ICocktailManager cocktailsManager = Cocktails.CocktailsFacade.Instance.GetCocktailManager(Cocktails.ManagersTypes.LiteDB);
+        private Cocktails.Logic.IIngredientsManager ingredientsManager = Cocktails.CocktailsFacade.Instance.GetIngredientManager(Cocktails.ManagersTypes.LiteDB);
 
         public CocktailsListPage()
         {
             InitializeComponent();
             this.refreshData();
-            this.ListBoxCocktails.DisplayMember = "name";
-            this.ListBoxCocktails.ValueMember = "id";
-
             this.ListIngredients.View = View.Details;
             this.ListIngredients.GridLines = true;
             this.ListIngredients.FullRowSelect = true;
@@ -29,6 +27,7 @@ namespace Bartender.Forms
             this.ListIngredients.Columns.Add("Id");
             this.ListIngredients.Columns.Add("name");
             this.ListIngredients.Columns.Add("descritpion");
+            this.ListIngredients.Columns.Add("Qty");
         }
 
         public void refreshData()
@@ -54,11 +53,38 @@ namespace Bartender.Forms
             {
                 if (dialogWindow.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    this.ListIngredients.Items.Add(
-                            new ListViewItem(dialogWindow.lastItemChecked.Clone().ToString().Split(','), 0)
-                            );
+                    Cocktails.Logic.ICocktail cocktail = this.ListBoxCocktails.SelectedItem as Cocktails.Logic.ICocktail;
+                    Cocktails.Logic.IIngredient ingredient = ingredientsManager.GetIngredient(
+                            dialogWindow.selectedId);
+                    cocktail.ingredients.Add(
+                        ingredientsManager.GetIngredient(
+                            dialogWindow.selectedId),
+                            dialogWindow.qty
+                        );
+                    cocktailsManager.UpdateCocktail(cocktail);
+                    this.updateIngredientList();
                 }
             }
+        }
+
+        private void updateIngredientList()
+        {
+            Cocktails.Logic.ICocktail cocktail = this.ListBoxCocktails.SelectedItem as Cocktails.Logic.ICocktail;
+            this.ListIngredients.Items.Clear();
+            this.ListIngredients.Items.AddRange(
+                cocktail.ingredients
+                .Select(
+                    item =>
+                    new ListViewItem(
+                        new[] {
+                            item.Key.id.ToString(),
+                            item.Key.name.ToString(),
+                            item.Key.description.ToString(),
+                            item.Value.ToString()
+                        }
+                    )
+                ).ToArray()
+            );
         }
     }
 }

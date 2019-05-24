@@ -13,6 +13,12 @@ namespace Cocktails.Logic
         List<Logic.IIngredient> GetIngredients();
 
         /// <summary>
+        /// Get an Ingredient by id
+        /// </summary>
+        /// <returns>Logic.IIngredient</returns>
+        Logic.IIngredient GetIngredient(int id);
+
+        /// <summary>
         /// Add a Ingredient using a IIngredient Object as model
         /// </summary>
         /// <param name="ingredient"></param>

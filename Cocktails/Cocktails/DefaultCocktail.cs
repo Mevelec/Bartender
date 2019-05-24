@@ -15,6 +15,10 @@ namespace Cocktails.Cocktails
         public float volume { get; set; }
         public float alcoholDegree { get; set; }
 
+        public DefaultCocktail()
+        {
+            this.ingredients = new Dictionary<IIngredient, float>();
+        }
         public void refreshQtys()
         {
             throw new NotImplementedException();

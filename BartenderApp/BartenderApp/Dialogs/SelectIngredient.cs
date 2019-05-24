@@ -86,6 +86,7 @@ namespace Bartender.Dialogs
 
         public ListViewItem lastItemChecked;
         public float qty;
+        public int selectedId;
         private void ListIngredients_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             // if we have the lastItem set as checked, and it is different
@@ -107,6 +108,7 @@ namespace Bartender.Dialogs
                 lastItemChecked != null)
             {
                 this.qty = float.Parse(this.textBoxQty.Text);
+                this.selectedId = Int32.Parse(this.lastItemChecked.SubItems[0].Text);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

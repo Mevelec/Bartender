@@ -16,26 +16,45 @@ namespace Cocktails
 
         public static CocktailsFacade Instance { get { return Nested.instance; } }
 
+        private Dictionary<ManagersTypes, Logic.ICocktailManager> cocktailManagers = new Dictionary<ManagersTypes, Logic.ICocktailManager>();
+        private Dictionary<ManagersTypes, Logic.IIngredientsManager> ingredientManagers = new Dictionary<ManagersTypes, Logic.IIngredientsManager>();
+
         public Logic.ICocktailManager GetCocktailManager(ManagersTypes type)
         {
-            switch (type)
+            if(!cocktailManagers.ContainsKey(type))
             {
-                case ManagersTypes.LiteDB:
-                    return new Managers.LiteDBCocktailManager(Settings.Settings.LITE_DB_CONNECTION);
-                default:
-                    throw new NotImplementedException();
+                switch (type)
+                {
+                    case ManagersTypes.LiteDB:
+                        cocktailManagers.Add( 
+                            type,
+                            new Managers.LiteDBCocktailManager(Settings.Settings.LITE_DB_CONNECTION)
+                        );
+                        break;
+                    default:
+                        throw new NotImplementedException();
+                }
             }
+            return cocktailManagers[type];
         }
 
         public Logic.IIngredientsManager GetIngredientManager(ManagersTypes type)
         {
-            switch (type)
+            if(!ingredientManagers.ContainsKey(type))
             {
-                case ManagersTypes.LiteDB:
-                    return new Managers.LiteDBIngredientManager(Settings.Settings.LITE_DB_CONNECTION);
-                default:
-                    throw new NotImplementedException();
+                switch (type)
+                {
+                    case ManagersTypes.LiteDB:
+                         ingredientManagers.Add(
+                             type,
+                             new Managers.LiteDBIngredientManager(Settings.Settings.LITE_DB_CONNECTION)
+                           );
+                        break;
+                    default:
+                        throw new NotImplementedException();
+                }
             }
+            return ingredientManagers[type];
         }
 
         private class Nested

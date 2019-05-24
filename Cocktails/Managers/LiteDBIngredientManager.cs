@@ -76,6 +76,12 @@ namespace Cocktails.Managers
             throw new NotImplementedException();
         }
 
+        public IIngredient GetIngredient(int id)
+        {
+            return this.db.GetCollection<IIngredient>(this.ingredientsTableName)
+                            .FindById(id);
+        }
+
         public List<IIngredient> GetIngredients()
         {
             return this.db.GetCollection<IIngredient>(this.ingredientsTableName).FindAll().ToList();
