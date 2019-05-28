@@ -11,17 +11,18 @@ namespace Cocktails.Cocktails
         public string name { get; set; }
         public string description { get; set; }
         public IRecipe recipe { get; set; }
-        public Dictionary<IIngredient, float> ingredients { get; set; }
+        public Dictionary<int, float> ingredients { get; set; }
         public float volume { get; set; }
         public float alcoholDegree { get; set; }
 
         public DefaultCocktail()
         {
-            this.ingredients = new Dictionary<IIngredient, float>();
+            this.ingredients = new Dictionary<int, float>();
         }
         public void refreshQtys()
         {
             throw new NotImplementedException();
         }
+
     }
 }

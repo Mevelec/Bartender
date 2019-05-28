@@ -22,20 +22,17 @@ namespace Cocktails.Managers
             AddCocktail(new Cocktails.DefaultCocktail() { name = "cocktail 2", description = "descri 2 " });
             AddCocktail(new Cocktails.DefaultCocktail() { name = "cocktail 3", description = "descri 3 " });
             AddCocktail(new Cocktails.DefaultCocktail() { name = "cocktail 4", description = "descri 4 " });
-            /*AddCocktail(
+            AddCocktail(
                 new Cocktails.DefaultCocktail()
                 {
-                    name = "cocktail 8",
+                    name = "Manza 8",
                     description = "descri 8 ",
-                    ingredients = new Dictionary<IIngredient, float>()
+                    ingredients = new Dictionary<int, float>()
                     {
-                        {
-                            new Ingredients.IngLiquid(),
-                            10
-                        }
+
                     }
                 }
-            );*/
+            );
 
         }
 

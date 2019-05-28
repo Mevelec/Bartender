@@ -19,6 +19,9 @@ namespace Bartender.Forms
         {
             InitializeComponent();
             this.refreshData();
+
+            this.ListBoxCocktails.DisplayMember = "name";
+
             this.ListIngredients.View = View.Details;
             this.ListIngredients.GridLines = true;
             this.ListIngredients.FullRowSelect = true;
@@ -44,6 +47,7 @@ namespace Bartender.Forms
                 this.TextBoxDescription.Text = item.description;
                 this.TextBoxVolume.Text = item.volume.ToString();
                 this.TextBoxAlcoholDegree.Text = item.alcoholDegree.ToString();
+                this.updateIngredientList();
             }
         }
 
@@ -58,7 +62,7 @@ namespace Bartender.Forms
                             dialogWindow.selectedId);
                     cocktail.ingredients.Add(
                         ingredientsManager.GetIngredient(
-                            dialogWindow.selectedId),
+                            dialogWindow.selectedId).id,
                             dialogWindow.qty
                         );
                     cocktailsManager.UpdateCocktail(cocktail);
