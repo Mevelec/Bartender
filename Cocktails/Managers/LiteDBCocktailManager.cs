@@ -18,35 +18,20 @@ namespace Cocktails.Managers
             this.db = new LiteDatabase(dbLink);
             var collection = this.db.GetCollection<ICocktail>(this.cocktailTableName);
             collection.Delete(x =>x != null);
-            AddCocktail(new Cocktails.DefaultCocktail() { name = "cocktail 1", description = "descri 1 " });
-            AddCocktail(new Cocktails.DefaultCocktail() { name = "cocktail 2", description = "descri 2 " });
-            AddCocktail(new Cocktails.DefaultCocktail() { name = "cocktail 3", description = "descri 3 " });
-            AddCocktail(new Cocktails.DefaultCocktail() { name = "cocktail 4", description = "descri 4 " });
-            AddCocktail(
-                new Cocktails.DefaultCocktail()
-                {
-                    name = "Manza 8",
-                    description = "descri 8 ",
-                    ingredients = new Dictionary<int, float>()
-                    {
-
-                    }
-                }
-            );
-
         }
 
         public ICocktail AddCocktail(ICocktail cocktail)
         {
             var collection = this.db.GetCollection<ICocktail>(this.cocktailTableName);
-            collection.Insert(new Cocktails.DefaultCocktail()
-                {
+            ICocktail tmpCocktail = new Cocktails.DefaultCocktail()
+            {
                 name = cocktail.name,
                 description = cocktail.description,
                 alcoholDegree = cocktail.alcoholDegree,
-                ingredients = cocktail.ingredients,
-                }
-            );
+
+            };
+            tmpCocktail.addIngredients(cocktail.getIngredients());
+            collection.Insert(tmpCocktail);
             return cocktail;         
         }
 
@@ -68,7 +53,7 @@ namespace Cocktails.Managers
             item.name = cocktail.name;
             item.description = cocktail.description;
             item.alcoholDegree = cocktail.alcoholDegree;
-            item.ingredients = cocktail.ingredients;
+            item.addIngredients(cocktail.getIngredients());
 
             collection.Update(item);
             return cocktail;

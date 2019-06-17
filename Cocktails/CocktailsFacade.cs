@@ -12,56 +12,64 @@ namespace Cocktails
     public sealed class CocktailsFacade
     {
 
-        private CocktailsFacade() { }
-
         public static CocktailsFacade Instance { get { return Nested.instance; } }
 
-        private Dictionary<ManagersTypes, Logic.ICocktailManager> cocktailManagers = new Dictionary<ManagersTypes, Logic.ICocktailManager>();
-        private Dictionary<ManagersTypes, Logic.IIngredientsManager> ingredientManagers = new Dictionary<ManagersTypes, Logic.IIngredientsManager>();
+        private Logic.ICocktailManager cocktailManager;
+        private Logic.IIngredientsManager ingredientManager;
 
-        public Logic.ICocktailManager GetCocktailManager(ManagersTypes type)
+        private CocktailsFacade(ManagersTypes type)
         {
-            if(!cocktailManagers.ContainsKey(type))
+            switch (type)
             {
-                switch (type)
-                {
-                    case ManagersTypes.LiteDB:
-                        cocktailManagers.Add( 
-                            type,
-                            new Managers.LiteDBCocktailManager(Settings.Settings.LITE_DB_CONNECTION)
-                        );
-                        break;
-                    default:
-                        throw new NotImplementedException();
-                }
+                case ManagersTypes.LiteDB:
+                    cocktailManager = new Managers.LiteDBCocktailManager(Settings.Settings.LITE_DB_CONNECTION);
+                    ingredientManager = new Managers.LiteDBIngredientManager(Settings.Settings.LITE_DB_CONNECTION);
+
+                    Logic.IIngredient ingredient1 = new Ingredients.IngLiquid()
+                    { id = 1, name = "Ing 1", description = "test me" };
+                    ingredientManager.AddIngredient(ingredient1);
+                    
+
+                    cocktailManager.AddCocktail(new Cocktails.DefaultCocktail() { name = "cocktail 1", description = "descri 1 " });
+                    cocktailManager.AddCocktail(new Cocktails.DefaultCocktail() { name = "cocktail 2", description = "descri 2 " });
+                    cocktailManager.AddCocktail(new Cocktails.DefaultCocktail() { name = "cocktail 3", description = "descri 3 " });
+                    cocktailManager.AddCocktail(new Cocktails.DefaultCocktail() {
+                        name = "cocktail 4",
+                        description = "descri 4 "
+                    });
+
+                    Logic.ICocktail cocktail1 = new Cocktails.DefaultCocktail()
+                    {
+                        name = "Manza 8",
+                        description = "descri 8 ",
+                    };
+                    cocktail1.addIngredient(ingredient1, 100);
+                    cocktailManager.AddCocktail(cocktail1);
+
+                    var a = cocktailManager.GetCocktails();
+                    break;
+                default:
+                    throw new NotImplementedException();
             }
-            return cocktailManagers[type];
         }
 
-        public Logic.IIngredientsManager GetIngredientManager(ManagersTypes type)
+        public Logic.ICocktailManager GetCocktailManager()
         {
-            if(!ingredientManagers.ContainsKey(type))
-            {
-                switch (type)
-                {
-                    case ManagersTypes.LiteDB:
-                         ingredientManagers.Add(
-                             type,
-                             new Managers.LiteDBIngredientManager(Settings.Settings.LITE_DB_CONNECTION)
-                           );
-                        break;
-                    default:
-                        throw new NotImplementedException();
-                }
-            }
-            return ingredientManagers[type];
+            return this.cocktailManager;
+        }
+
+        public Logic.IIngredientsManager GetIngredientManager()
+        {
+            return this.ingredientManager;
         }
 
         private class Nested
         {
             static Nested() { }
 
-            internal static readonly CocktailsFacade instance = new CocktailsFacade();
+            internal static readonly CocktailsFacade instance = new CocktailsFacade(
+                (ManagersTypes)Enum.Parse(typeof(ManagersTypes), "LiteDB")
+            );
         }
     }
 }

@@ -11,7 +11,6 @@ namespace Cocktails.Logic
         string description { get; set; }
 
         IRecipe recipe { get; set; }
-        Dictionary<int, float> ingredients { get; set; }
 
         //var to set on creation of cocktail
         float volume { get; set; }
@@ -21,5 +20,15 @@ namespace Cocktails.Logic
         /// using this.ingredients
         /// </summary>
         void refreshQtys();
+
+        /// <summary>
+        /// return the list of ingredients as  Dictionary<IIngredient, float>
+        /// </summary>
+        /// <returns></returns>
+        Dictionary<IIngredient, float> getIngredients();
+        bool addIngredients(Dictionary<IIngredient, float> ingredients);
+        bool addIngredient(IIngredient ingredient, float qty);
+        bool removeIngredient(IIngredient ingredient);
+
     }
 }

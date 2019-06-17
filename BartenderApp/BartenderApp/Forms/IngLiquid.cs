@@ -12,7 +12,7 @@ namespace Bartender.Forms
 {
     public partial class IngLiquid : UserControl
     {
-        private Cocktails.Logic.IIngredientsManager ingredientsManager = Cocktails.CocktailsFacade.Instance.GetIngredientManager(Cocktails.ManagersTypes.LiteDB);
+        private Cocktails.Logic.IIngredientsManager ingredientsManager = Cocktails.CocktailsFacade.Instance.GetIngredientManager();
         private List<object> listeners = new List<object>();
         public IngLiquid()
         {

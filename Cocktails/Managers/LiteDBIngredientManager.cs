@@ -18,10 +18,10 @@ namespace Cocktails.Managers
             this.db = new LiteDatabase(dbLink);
             var collection = this.db.GetCollection<IIngredient>(this.ingredientsTableName);
             collection.Delete(x => x != null);
-            collection.Insert(new Ingredients.IngLiquid() { name = "cocktail 1", description = "descri 1 " });
-            collection.Insert(new Ingredients.IngLiquid() { name = "cocktail 2", description = "descri 2 " });
-            collection.Insert(new Ingredients.IngLiquid() { name = "cocktail 3", description = "descri 3 " });
-            collection.Insert(new Ingredients.IngLiquid() { name = "cocktail 4", description = "descri 4 " });
+            collection.Insert(new Ingredients.IngLiquid() { name = "ing 1", description = "descri 1 " });
+            collection.Insert(new Ingredients.IngLiquid() { name = "ing 2", description = "descri 2 " });
+            collection.Insert(new Ingredients.IngLiquid() { name = "ing 3", description = "descri 3 " });
+            collection.Insert(new Ingredients.IngLiquid() { name = "ing 4", description = "descri 4 " });
 
         }
 

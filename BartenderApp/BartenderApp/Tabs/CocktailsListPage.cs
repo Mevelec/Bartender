@@ -12,8 +12,8 @@ namespace Bartender.Forms
 {
     public partial class CocktailsListPage : UserControl
     {
-        private Cocktails.Logic.ICocktailManager cocktailsManager = Cocktails.CocktailsFacade.Instance.GetCocktailManager(Cocktails.ManagersTypes.LiteDB);
-        private Cocktails.Logic.IIngredientsManager ingredientsManager = Cocktails.CocktailsFacade.Instance.GetIngredientManager(Cocktails.ManagersTypes.LiteDB);
+        private Cocktails.Logic.ICocktailManager cocktailsManager = Cocktails.CocktailsFacade.Instance.GetCocktailManager();
+        private Cocktails.Logic.IIngredientsManager ingredientsManager = Cocktails.CocktailsFacade.Instance.GetIngredientManager();
 
         public CocktailsListPage()
         {
@@ -60,11 +60,8 @@ namespace Bartender.Forms
                     Cocktails.Logic.ICocktail cocktail = this.ListBoxCocktails.SelectedItem as Cocktails.Logic.ICocktail;
                     Cocktails.Logic.IIngredient ingredient = ingredientsManager.GetIngredient(
                             dialogWindow.selectedId);
-                    cocktail.ingredients.Add(
-                        ingredientsManager.GetIngredient(
-                            dialogWindow.selectedId).id,
-                            dialogWindow.qty
-                        );
+                    cocktail.addIngredient(ingredient, dialogWindow.qty);
+
                     cocktailsManager.UpdateCocktail(cocktail);
                     this.updateIngredientList();
                 }
@@ -76,7 +73,7 @@ namespace Bartender.Forms
             Cocktails.Logic.ICocktail cocktail = this.ListBoxCocktails.SelectedItem as Cocktails.Logic.ICocktail;
             this.ListIngredients.Items.Clear();
             this.ListIngredients.Items.AddRange(
-                cocktail.ingredients
+                cocktail.getIngredients()
                 .Select(
                     item =>
                     new ListViewItem(

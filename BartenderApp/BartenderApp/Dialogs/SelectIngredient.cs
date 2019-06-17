@@ -12,7 +12,7 @@ namespace Bartender.Dialogs
 {
     public partial class SelectIngredient : Form
     {
-        private Cocktails.Logic.IIngredientsManager ingredientsManager = Cocktails.CocktailsFacade.Instance.GetIngredientManager(Cocktails.ManagersTypes.LiteDB);
+        private Cocktails.Logic.IIngredientsManager ingredientsManager = Cocktails.CocktailsFacade.Instance.GetIngredientManager();
 
         public SelectIngredient()
         {
