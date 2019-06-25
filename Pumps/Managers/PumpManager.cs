@@ -23,7 +23,9 @@ namespace Pumps.Managers
             this._pumpsList.Add(new DefaultPump() { name = "pump 3 ", description = "descri 3", id = 3 });
             this._pumpsList.Add(new DefaultPump() { name = "pump 4 ", description = "descri 4", id = 4 });
             this._pumpsList.Add(new DefaultPump() { name = "pump 5 ", description = "descri 5", id = 5  });
-            this._pumpsList.Add(new DefaultPump() { name = "pump 6 ", description = "descri 6", pin = "020000", id = 6 });
+            var pumpTest = new DefaultPump() { name = "pump 6 ", description = "descri 6", pin = "020000", id = 6 };
+            this._pumpsList.Add(pumpTest);
+            pumpTest.pump(10);
         }
 
         public Logic.IPump AddPump(PumpsTypes type)
